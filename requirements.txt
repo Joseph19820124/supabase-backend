@@ -1,1 +1,6 @@
-需要写一个基于supabase的backend，并且部署在railway
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+supabase==2.3.4
+pydantic==2.5.3
+pydantic-settings==2.1.0
+python-dotenv==1.0.0
