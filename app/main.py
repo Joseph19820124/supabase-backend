@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
-from app.routers import health, users, items
+from app.routers import health, users, items, clusters
 
 app = FastAPI(
     title="Supabase Backend API",
@@ -22,6 +22,7 @@ app.add_middleware(
 app.include_router(health.router, tags=["Health"])
 app.include_router(users.router, prefix="/api/users", tags=["Users"])
 app.include_router(items.router, prefix="/api/items", tags=["Items"])
+app.include_router(clusters.router, prefix="/api/clusters", tags=["Clusters"])
 
 @app.get("/")
 async def root():
